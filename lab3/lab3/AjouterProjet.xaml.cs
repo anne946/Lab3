@@ -40,7 +40,7 @@ namespace lab3
             d.Text = " ";
             b.Text = " ";
             de.Text = " ";
-            e.Text = " ";
+            em.Text = " ";
         }
 
         private void myButton_Click(object sender, RoutedEventArgs e)
@@ -69,7 +69,7 @@ namespace lab3
                 valide = false;
             }
 
-            if (e.Text.Trim() == "")
+            if (em.Text.Trim() == "")
             {
                 ErreurE.Visibility = Visibility.Visible;
                 valide = false;
@@ -77,15 +77,16 @@ namespace lab3
 
             if (valide == true)
             {
-                Maisons cc = new Maisons()
+                Projet cc = new Projet()
                 {
-                    Id = Convert.ToInt32(id.Text),
-                    Categorie = Convert.ToString(c.Text),
-                    Prix = Convert.ToDouble(p.Text),
-                    Ville = Convert.ToString(v.Text)
+                    Numero = Convert.ToString(n.Text),
+                    Debut = Convert.ToDateTime(d.Text),
+                    Budget = Convert.ToInt32(b.Text),
+                    Description = Convert.ToString(de.Text),
+                    Employe = Convert.ToString(em.Text)
                 };
 
-                GestionBD.getInstance().insererMaison(cc);
+                GestionBD.getInstance().insererProjet(cc);
 
                 reset();
             }
