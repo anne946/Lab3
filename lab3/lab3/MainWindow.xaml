@@ -7,7 +7,15 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
 
-    <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-        <Button x:Name="myButton" Click="myButton_Click">Click Me</Button>
+    <StackPanel Orientation="Vertical" >
+
+        <CommandBar DefaultLabelPosition="Right">
+            <AppBarButton Icon="Add" x:Name="iAjouter" Label="Ajouter" Click="iAjouter_Click" />
+            <AppBarButton Icon="PostUpdate" x:Name="iAfficher" Label="Afficher" Click="iAfficher_Click" />
+            <AppBarButton Icon="List" x:Name="iRechercher" Label="Rechercher" Click="iRechercher_Click" />
+        </CommandBar>
+
+        <ListView x:Name="lvListe"/>
+        <Frame x:Name="mainFrame"/>
     </StackPanel>
 </Window>

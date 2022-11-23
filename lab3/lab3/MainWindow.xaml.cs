@@ -28,9 +28,22 @@ namespace lab3
             this.InitializeComponent();
         }
 
-        private void myButton_Click(object sender, RoutedEventArgs e)
+        private void iAfficher_Click(object sender, RoutedEventArgs e)
         {
-            myButton.Content = "Clicked";
+            lvListe.ItemsSource = GestionBD.getInstance().getProjet();
+            lvListe.ItemsSource = GestionBD.getInstance().getEmploye();
+        }
+
+
+        private void iAjouter_Click(object sender, RoutedEventArgs e)
+        {
+
+            
+        }
+
+        private void iRechercher_Click(object sender, RoutedEventArgs e)
+        {
+            
         }
     }
 }
